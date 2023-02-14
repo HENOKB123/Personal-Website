@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <nav>
+        <a href="#about-me">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <img src="logo.png" alt="My Personal Website Logo">
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- About Me Section -->
+      <section id="name">
+        <h1>HENOK BELAY</h1>
+      </section>
+      <section id="about-me">
+        <h2>About Me</h2>
+        <p>"I am a master's student in computer science with a strong focus on software engineering and web development. I have experience in a variety of programming languages and have built several projects that showcase my technical abilities and attention to detail. I am passionate about creating user-friendly and efficient applications that meet the needs of diverse users. I am constantly seeking new challenges and opportunities to grow my skills and make a positive impact in the technology industry."</p>
+        <img src="profile-pic.jpg" alt="My profile picture">
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+          <li>
+            <h3>HR Database</h3>
+            <p>A Database used for managing all the information and facts about a business's human resources.</p>
+          </li>
+          <li>
+            <h3>Library Management Systems</h3>
+            <p>Established to manage basic housekeeping function of a library</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact">
+        <h2>Contact</h2>
+        <form onsubmit="submitForm(event)">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message"></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2023 My Personal Website</p>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <script>
+      function submitForm(event) {
+        event.preventDefault();
+    
+        const name = document.querySelector("#name").value;
+        const email = document.querySelector("#email").value;
+        const message = document.querySelector("#message").value;
+    
+        const subject = `Message from ${name} (${email})`;
+        const body = message;
+    
+        window.location.href = `mailto:henokbelay.a@gmail.com?subject=${subject}&body=${body}`;
+      }
+    </script>
+    
+  </body>
+</html>
